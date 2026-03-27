@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<head>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--site title, what you see in your tab-->
+ <title>ZeroAmp</title>
+</head>
+<body>
+   <div class="container">
+    <div id="webamp-container" style="width: 250px;">
+      <!-- Webamp will attempt to center itself within this div -->
+    </div>
+   </div>
+
+  <script type="module">
+      import Webamp from "https://unpkg.com/webamp@^2";
+      const Winamp = window.Webamp;
+      const webamp = new Webamp({ 
+       
+                availableSkins: [
+          {
+            url: "https://archive.org/download/winampskins_zero_3/zero.wsz",
+            name: "Zero Amp",
+          },
+        ],
+        initialSkin: {
+          url: "https://archive.org/download/winampskins_zero_3/zero.wsz",
+        },  
+        initialTracks: [
+          {
+            metaData: {
+              artist: "DJ Mike Llama",
+              title: "Llama Whippin' Intro",
+            },
+            // NOTE: Your audio file must be served from the same domain as your HTML
+            // file, or served with permissive CORS HTTP headers:
+            // https://docs.webamp.org/docs/guides/cors
+            url: "https://cdn.jsdelivr.net/gh/captbaritone/webamp@43434d82cfe0e37286dbbe0666072dc3190a83bc/mp3/llama-2.91.mp3",
+            duration: 5.322286,
+          },
+          {
+            metaData: {
+              artist: "CAPCOM Sound Team",
+              title: "Zero Main Theme (From MegaManX)",
+            },
+            url: "https://file.garden/aTyH7uSsXSbubAjB/shrine-music/1-MMX-ZERO.ogg",
+            
+          },
+                    {
+            metaData: {
+              artist: "CAPCOM Sound Team",
+              title: "Zero Main Theme (From Maverick Hunter X)",
+            },
+            url: "https://file.garden/aTyH7uSsXSbubAjB/shrine-music/2-MHX-theme_of_zero.ogg",
+            
+          },
+                    {
+            metaData: {
+              artist: "CAPCOM Sound Team",
+              title: "Zero Main Theme (From MegaMan Zero)",
+            },
+            url: "https://file.garden/aTyH7uSsXSbubAjB/shrine-music/3-ZERO_theme_Mega_Man_Zero.ogg",
+            
+          },
+                    {
+            metaData: {
+              artist: "CAPCOM Sound Team",
+              title: "Zero Theme (From Marvel vs CAPCOM 3)",
+            },
+            url: "https://file.garden/aTyH7uSsXSbubAjB/shrine-music/4-MVC3_Zero_Theme.wav",
+           
+          },
+                    {
+            metaData: {
+              artist: "CAPCOM Sound Team",
+              title: "Zero Theme (From MegaManX2)",
+            },
+            url: "https://file.garden/aTyH7uSsXSbubAjB/shrine-music/5-MMX2_-_Zero.mp3.mpeg",
+            
+          },
+                    {
+            metaData: {
+              artist: "CAPCOM Sound Team",
+              title: "Zero Theme (From Marvel vs CAPCOM: Infinite)",
+            },
+            url: "https://file.garden/aTyH7uSsXSbubAjB/shrine-music/6-MVCI_Zero_Theme.wav",
+            
+          },
+                    {
+            metaData: {
+              artist: "CAPCOM Sound Team",
+              title: "Zero Stage Theme (From MegaManX3 for SNES)",
+            },
+            url: "https://file.garden/aTyH7uSsXSbubAjB/shrine-music/7-X3SFC-ZERO.ogg",
+            
+          },
+                    {
+            metaData: {
+              artist: "CAPOM Sound Team",
+              title: "Zero (From MegaManX6)",
+            },
+            url: "https://file.garden/aTyH7uSsXSbubAjB/shrine-music/8-X6-ZERO.ogg",
+            
+          },
+                    {
+            metaData: {
+              artist: "CAPOM Sound Team",
+              title: "Zero Stage Theme (From MegaManX3 for CD-ROM)",
+            },
+            url: "https://file.garden/aTyH7uSsXSbubAjB/shrine-music/9-X3Arrange-ZERO.ogg",
+            
+          },
+        ],
+      });
+      
+
+      // Returns a promise indicating when it's done loading.
+      webamp.renderWhenReady(document.getElementById("webamp-container"));
+      webamp.renderWhenReady(container).then(() => {
+  console.log("rendered webamp!");
+});
+      if (!Webamp.browserIsSupported()) {
+  alert("Oh no! Webamp does not work!");
+  throw new Error("What's the point of anything?");
+}
+    </script>
+</body>
+</html>
